@@ -1,11 +1,7 @@
 <mat-drawer-container class="example-container" autosize>
   <!-- BARRA DE HERRAMIENTAS -->
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Navegación Lateral Tamaño Automático</p>
-    <p *ngIf="showFiller">Lorenita</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Texto extra alternativo
-    </button>
+    <p><app-dialogos></app-dialogos></p>
   </mat-drawer>
 
   <!-- CONTENEDOR  -->
@@ -19,7 +15,7 @@
       >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Mi proyecto </span>
+      <span>Administración de Alumnos </span>
       <span class="example-spacer"></span>
       <button
         mat-icon-button
@@ -28,18 +24,12 @@
       >
         <mat-icon>favorite</mat-icon>
       </button>
-      <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with share icon"
-      >
-        <mat-icon>share</mat-icon>
-      </button>
+      <!--buscar icon con dibujo de alumnos abm-->
     </mat-toolbar>
 
     <!-- PÁGINAS  -->
     <main>
-      <app-cards color="red"> </app-cards>
+      <app-listado-alumnos></app-listado-alumnos>
     </main>
   </div>
 </mat-drawer-container>

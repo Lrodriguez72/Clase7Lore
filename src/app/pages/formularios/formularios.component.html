@@ -1,0 +1,51 @@
+<form [formGroup]="FormularioRegistro">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input [formControl]="nombreControl" matInput placeholder="Nombre" />
+
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+    <mat-error>El campo es requerido</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input [formControl]="apellidoControl" matInput placeholder="Apellido" />
+
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+    <mat-error>El campo es requerido</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>DNI</mat-label>
+    <input
+      [formControl]="dniControl"
+      type="number"
+      matInput
+      placeholder="DNI"
+    />
+
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+    <mat-error>El campo es requerido</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input [formControl]="emailControl" matInput placeholder="Email" />
+
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+    <mat-error>El campo debe ser un email válido</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>País</mat-label>
+    <mat-select>
+      <mat-option>Argentina</mat-option>
+      <mat-option>Uruguay</mat-option>
+      <mat-option>Chile</mat-option>
+      <mat-option>México</mat-option>
+      <mat-option>Paraguay</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-button type="submit">Agregar</button>
+</form>
