@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 //import { AgregarAlumnoComponent } from './mis-dialogos/agregar-alumno/agregar-alumno.component';
 import { FormulariosModule } from '../formularios/formularios.module';
+import { ListadoAlumnosModule } from '../listado-alumnos/listado-alumnos.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,12 @@ import { FormulariosModule } from '../formularios/formularios.module';
     // AgregarAlumnoComponent,
   ],
   exports: [DialogosComponent],
-  imports: [CommonModule, MatButtonModule, MatDialogModule, FormulariosModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatDialogModule,
+    FormulariosModule,
+    ListadoAlumnosModule,
+  ],
 })
 export class DialogosModule {}

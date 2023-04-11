@@ -14,6 +14,7 @@ import { DialogosModule } from '../pages/dialogos/dialogos.module';
 import { ListadoAlumnosModule } from '../pages/listado-alumnos/listado-alumnos.module';
 import { AgregarAlumnoModule } from '../pages/dialogos/mis-dialogos/agregar-alumno/agregar-alumno.module';
 import { ModificarAlumnoModule } from '../pages/dialogos/misdialogos/modificar-alumno/modificar-alumno.module';
+import { ListarAlumnosModule } from '../pages/dialogos/misdialogos/listar-alumnos/listar-alumnos.module';
 @NgModule({
   declarations: [DashboardComponent],
   exports: [DashboardComponent],
@@ -28,9 +29,9 @@ import { ModificarAlumnoModule } from '../pages/dialogos/misdialogos/modificar-a
     ButtonsAndIconsModule,
     FormulariosModule,
     DialogosModule,
-    ListadoAlumnosModule,
     AgregarAlumnoModule,
     ModificarAlumnoModule,
+    ListarAlumnosModule,
   ],
 })
 export class DashboardModule {}

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { ListadoAlumnosComponent } from './pages/listado-alumnos/listado-alumnos.component';
 import { ListadoAlumnosModule } from './pages/listado-alumnos/listado-alumnos.module';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { ListadoAlumnosModule } from './pages/listado-alumnos/listado-alumnos.mo
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
-    ListadoAlumnosModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

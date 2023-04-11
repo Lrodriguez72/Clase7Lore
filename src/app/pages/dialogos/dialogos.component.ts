@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AgregarAlumnoComponent } from './mis-dialogos/agregar-alumno/agregar-alumno.component';
+import { ListarAlumnosComponent } from './misdialogos/listar-alumnos/listar-alumnos.component';
 import { ModificarAlumnoComponent } from './misdialogos/modificar-alumno/modificar-alumno.component';
 
 @Component({
@@ -16,6 +17,9 @@ export class DialogosComponent {
     }
     if (type === 'modificar') {
       this.dialogoService.open(ModificarAlumnoComponent);
+    }
+    if (type === 'listado') {
+      this.dialogoService.open(ListarAlumnosComponent);
     }
   }
 }

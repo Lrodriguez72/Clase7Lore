@@ -8,7 +8,5 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class AgregarAlumnoComponent {
   tipo!: string;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    this.tipo = data.type;
-  }
+  constructor() {}
 }

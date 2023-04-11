@@ -39,16 +39,15 @@
   <p>
     <mat-form-field appearance="outline">
       <mat-label>País</mat-label>
-      <mat-select [formControl]="paisControl">
-        <mat-option value="Argentina">Argentina</mat-option>
-        <mat-option value="Uruguay">Uruguay</mat-option>
-        <mat-option value="Chile">Chile</mat-option>
-        <mat-option value="México">México</mat-option>
-        <mat-option value="Paraguay">Paraguay</mat-option>
+      <mat-select>
+        <mat-option>Argentina</mat-option>
+        <mat-option>Uruguay</mat-option>
+        <mat-option>Chile</mat-option>
+        <mat-option>México</mat-option>
+        <mat-option>Paraguay</mat-option>
       </mat-select>
     </mat-form-field>
   </p>
-  <button mat-button justify-content: center type="submit" (click)="agregar()">
-    Agregar
-  </button>
+
+  <button mat-button justify-content: flex-end type="submit">Modificar</button>
 </form>
