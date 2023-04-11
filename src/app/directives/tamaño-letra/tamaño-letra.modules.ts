@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BloqueRedondeadoDirective } from './bloque-redondeado.directive';
+//import { NgModule } from '@angular/core';
+//import { CommonModule } from '@angular/common';
+//import { LetraTamanoVeinte } from './tamaño-letra.directive';
 
-@NgModule({
-  declarations: [BloqueRedondeadoDirective],
-  imports: [CommonModule],
-  exports: [BloqueRedondeadoDirective],
-})
-export class BloqueRedondeadoModule {}
+//@NgModule({
+//declarations: [LetraTamanoVeinte],
+//imports: [CommonModule],
+// exports: [LetraTamanoVeinteDirective],
+//})
+//export class LetraTamañoVeinteoModule {}

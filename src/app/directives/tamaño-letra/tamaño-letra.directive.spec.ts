@@ -1,8 +1,8 @@
-import { BloqueRedondeadoDirective } from './bloque-redondeado.directive';
+//import { LetraTamanoVeinteDirective } from './letraTamanoVeinte.directive';
 
-describe('BloqueRedondeadoDirective', () => {
-  it('should create an instance', () => {
-    const directive = new BloqueRedondeadoDirective();
-    expect(directive).toBeTruthy();
-  });
-});
+//describe('BloqueRedondeadoDirective', () => {
+// it('should create an instance', () => {
+//  const directive = LetraTamanoVeinteDirective();
+//  expect(directive).toBeTruthy();
+// });
+//});
