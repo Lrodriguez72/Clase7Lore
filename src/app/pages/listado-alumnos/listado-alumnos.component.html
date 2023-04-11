@@ -28,7 +28,10 @@
     <th mat-header-cell *matHeaderCellDef>Opciones</th>
     <td mat-cell *matCellDef="let element">
       <button (click)="eliminar(element.dni)">Eliminar</button>
+
+      <button (click)="modificar(element.dni)">Modificar</button>
     </td>
+    <!-- faltan iconos eliminar agregar-->
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

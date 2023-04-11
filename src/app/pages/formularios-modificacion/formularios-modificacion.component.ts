@@ -9,7 +9,6 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./formularios-modificacion.component.scss'],
 })
 export class FormulariosModificacionComponent {
-  [x: string]: any;
   constructor(
     private service: LocalStorageService,
     private dialog: MatDialogRef<FormulariosModificacionComponent>
@@ -19,7 +18,7 @@ export class FormulariosModificacionComponent {
   apellidoControl = new FormControl('', Validators.required);
   dniControl = new FormControl('', [
     Validators.required,
-    Validators.minLength(8),
+    Validators.minLength(6),
   ]);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   paisControl = new FormControl('', Validators.required);
@@ -34,8 +33,7 @@ export class FormulariosModificacionComponent {
 
   modificar() {
     if (this.FormularioRegistro.status === 'INVALID') return;
-
-    let alumno = {
+    let alumnoModificar = {
       nombre: this.FormularioRegistro.get('nombre')?.value,
       apellido: this.FormularioRegistro.get('apellido')?.value,
       dni: this.FormularioRegistro.get('dni')?.value,
@@ -43,10 +41,13 @@ export class FormulariosModificacionComponent {
       pais: this.FormularioRegistro.get('pais')?.value,
     };
 
-    if (this.service.obtenerAlumno(+alumno.dni!)!.dni === +alumno.dni!) return;
+    if (
+      this.service.obtenerAlumno(alumnoModificar.dni!)!.dni ===
+      alumnoModificar.dni!
+    )
+      return;
 
-    //this.service.eliminarAlumno(alumno);
-    this.service.agregarAlumno(alumno);
+    this.service.modificarAlumno(alumnoModificar);
     this.dialog.close();
   }
 }

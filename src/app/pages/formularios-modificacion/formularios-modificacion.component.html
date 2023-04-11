@@ -1,4 +1,5 @@
-<form [formGroup]="FormularioRegistro">
+<form [formGroup]="FormularioRegistro" (ngSubmit)="modificar()">
+  <!--(ngSubmit)="modificar"                 -->
   <p>
     <mat-form-field appearance="outline">
       <!-- <mat-icon matPrefix>sentiment_very_satisfied</mat-icon> -->

@@ -25,12 +25,12 @@ export class ListadoAlumnosComponent implements OnInit {
     },
   ];
   displayedColumns: string[] = [
-    'nombre',
-    'apellido',
+    'Nombre',
+    'Apellido',
     'DNI',
-    'email',
-    'pais',
-    'opciones',
+    'Email',
+    'País',
+    'Opciones',
   ];
   dataSource = [];
   constructor(private localService: LocalStorageService) {
@@ -44,7 +44,7 @@ export class ListadoAlumnosComponent implements OnInit {
   }
 
   modificar(id: number) {
-    this.localService.eliminarAlumno(id);
+    this.localService.modificarAlumno(id);
     this.dataSource = this.localService.obtenerAlumnos();
   }
 
