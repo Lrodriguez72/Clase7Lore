@@ -19,8 +19,8 @@ export class ListadoAlumnosComponent implements OnInit {
     {
       nombre: 'Lorena',
       apellido: 'Rodriguez',
-      dni: 12345678,
-      email: 'hola@a.com',
+      dni: 22863423,
+      email: 'lorer1972@gmail.com',
       pais: 'Argentina',
     },
   ];

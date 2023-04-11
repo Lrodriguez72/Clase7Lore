@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { Alumno } from '../listado-alumnos/listado-alumnos.component';
 
@@ -9,7 +10,10 @@ import { Alumno } from '../listado-alumnos/listado-alumnos.component';
   styleUrls: ['./formularios.component.scss'],
 })
 export class FormulariosComponent {
-  constructor(private service: LocalStorageService) {}
+  constructor(
+    private service: LocalStorageService,
+    private dialog: MatDialogRef<FormulariosComponent>
+  ) {}
 
   nombreControl = new FormControl('', Validators.required);
   apellidoControl = new FormControl('', Validators.required);
@@ -39,8 +43,9 @@ export class FormulariosComponent {
       pais: this.FormularioRegistro.get('pais')?.value,
     };
 
-    if (this.service.obtenerAlumno(+alumno.dni!)) return;
+    if (this.service.obtenerAlumno(+alumno.dni!)!.dni === +alumno.dni!) return;
 
     this.service.agregarAlumno(alumno);
+    this.dialog.close();
   }
 }

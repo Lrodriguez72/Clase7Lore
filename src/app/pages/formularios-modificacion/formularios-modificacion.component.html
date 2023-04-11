@@ -5,7 +5,7 @@
       <mat-label>Nombre</mat-label>
       <input [formControl]="nombreControl" matInput placeholder="Nombre" />
       <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>El nombre de tener como minimo 6 caracteres</mat-hint>
+      <mat-hint>El campo es requerido</mat-hint>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Apellido</mat-label>
@@ -49,5 +49,14 @@
     </mat-form-field>
   </p>
 
-  <button mat-button justify-content: flex-end type="submit">Modificar</button>
+  <button
+    mat-button
+    justify-content:
+    flex-end
+    type="submit"
+    (click)="modificar()"
+    ()
+  >
+    Modificar
+  </button>
 </form>
