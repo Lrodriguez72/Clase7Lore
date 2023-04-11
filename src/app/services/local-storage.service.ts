@@ -19,7 +19,6 @@ export class LocalStorageService {
 
   obtenerAlumno(dni: number) {
     let array: Alumno[] = JSON.parse(localStorage.getItem('alumnos')!) || [];
-    console.log(array.find((a) => a.dni));
     return array.find((a) => a.dni);
   }
 

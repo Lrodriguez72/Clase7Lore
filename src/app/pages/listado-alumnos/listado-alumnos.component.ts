@@ -43,6 +43,11 @@ export class ListadoAlumnosComponent implements OnInit {
     this.dataSource = this.localService.obtenerAlumnos();
   }
 
+  modificar(id: number) {
+    this.localService.eliminarAlumno(id);
+    this.dataSource = this.localService.obtenerAlumnos();
+  }
+
   ngOnInit() {
     this.dataSource = this.localService.obtenerAlumnos();
   }
