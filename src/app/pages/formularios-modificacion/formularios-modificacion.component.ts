@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-formularios-modificacion',
@@ -11,32 +12,31 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class FormulariosModificacionComponent {
   constructor(
     private service: LocalStorageService,
-    private dialog: MatDialogRef<FormulariosModificacionComponent>
-  ) {}
+    private dialog: MatDialogRef<FormulariosModificacionComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    console.log(this.data);
+  }
 
   nombreControl = new FormControl('', Validators.required);
   apellidoControl = new FormControl('', Validators.required);
-  dniControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(6),
-  ]);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   paisControl = new FormControl('', Validators.required);
 
   FormularioRegistro = new FormGroup({
     nombre: this.nombreControl,
     apellido: this.apellidoControl,
-    dniControl: this.dniControl,
-    emailControl: this.emailControl,
-    paisControl: this.paisControl,
+    email: this.emailControl,
+    pais: this.paisControl,
   });
 
   modificar() {
     if (this.FormularioRegistro.status === 'INVALID') return;
+
     let alumnoModificar = {
       nombre: this.FormularioRegistro.get('nombre')?.value,
       apellido: this.FormularioRegistro.get('apellido')?.value,
-      dni: this.FormularioRegistro.get('dni')?.value,
+      dni: this.data.dni,
       email: this.FormularioRegistro.get('email')?.value,
       pais: this.FormularioRegistro.get('pais')?.value,
     };

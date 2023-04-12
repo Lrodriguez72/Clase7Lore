@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 //import { AgregarAlumnoComponent } from './mis-dialogos/agregar-alumno/agregar-alumno.component';
 import { FormulariosModule } from '../formularios/formularios.module';
 import { ListadoAlumnosModule } from '../listado-alumnos/listado-alumnos.module';
+import { FormulariosModificacionModule } from '../formularios-modificacion/formularios-modificacion.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ListadoAlumnosModule } from '../listado-alumnos/listado-alumnos.module'
     MatDialogModule,
     FormulariosModule,
     ListadoAlumnosModule,
+    FormulariosModificacionModule,
   ],
 })
 export class DialogosModule {}

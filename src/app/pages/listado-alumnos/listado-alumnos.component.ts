@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { ModificarAlumnoComponent } from '../dialogos/misdialogos/modificar-alumno/modificar-alumno.component';
+import { AgregarAlumnoComponent } from '../dialogos/mis-dialogos/agregar-alumno/agregar-alumno.component';
 export interface Alumno {
   nombre: string;
   dni: number;
@@ -29,11 +31,14 @@ export class ListadoAlumnosComponent implements OnInit {
     'Apellido',
     'DNI',
     'Email',
-    'País',
+    'Pais',
     'Opciones',
   ];
-  dataSource = [];
-  constructor(private localService: LocalStorageService) {
+  dataSource: any[] = [];
+  constructor(
+    private localService: LocalStorageService,
+    private dialogoService: MatDialog
+  ) {
     if (!localStorage.getItem('alumnos'))
       localStorage.setItem('alumnos', JSON.stringify(this.array));
   }
@@ -43,12 +48,18 @@ export class ListadoAlumnosComponent implements OnInit {
     this.dataSource = this.localService.obtenerAlumnos();
   }
 
-  modificar(id: number) {
-    this.localService.modificarAlumno(id);
+  modificar(alumno: any) {
+    this.dialogoService
+      .open(ModificarAlumnoComponent, {
+        data: alumno,
+      })
+      .afterClosed()
+      .subscribe(() => (this.dataSource = this.localService.obtenerAlumnos()));
     this.dataSource = this.localService.obtenerAlumnos();
   }
 
   ngOnInit() {
+    console.log(this.localService.obtenerAlumnos());
     this.dataSource = this.localService.obtenerAlumnos();
   }
 }

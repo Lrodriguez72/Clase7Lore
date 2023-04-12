@@ -19,7 +19,7 @@ export class FormulariosComponent {
   apellidoControl = new FormControl('', Validators.required);
   dniControl = new FormControl('', [
     Validators.required,
-    Validators.minLength(8),
+    Validators.minLength(1),
   ]);
   emailControl = new FormControl('', [Validators.required, Validators.email]);
   paisControl = new FormControl('', Validators.required);

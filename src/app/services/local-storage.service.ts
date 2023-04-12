@@ -34,16 +34,19 @@ export class LocalStorageService {
     let alumnoEditar = array.find(
       (alumno) => alumno.dni == alumnoModificar.dni
     );
+
     if (alumnoEditar !== undefined) {
+      let index = array.indexOf(alumnoEditar);
       alumnoEditar.nombre = alumnoModificar.nombre;
       alumnoEditar.apellido = alumnoModificar.apellido;
       alumnoEditar.dni = alumnoModificar.dni;
       alumnoEditar.email = alumnoModificar.email;
       alumnoEditar.pais = alumnoModificar.pais;
+      array[index] = alumnoEditar;
 
-      let newarray = [array, alumnoEditar];
-
-      localStorage.setItem('alumnos', JSON.stringify(newarray));
+      // [array, alumno] = [[1,2,3], alumno]
+      // [...array, alumno] = [1,2,3, alumno]
+      localStorage.setItem('alumnos', JSON.stringify(array));
     }
   }
 }
