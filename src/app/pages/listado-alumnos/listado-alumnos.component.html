@@ -9,6 +9,15 @@
     <td mat-cell *matCellDef="let element">{{ element.apellido }}</td>
   </ng-container>
 
+  <!--- INTENTO DE APLICAR PIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+  <ng-container matColumnDef="Nombre Completo">
+    <th mat-header-cell *matHeaderCellDef appFontSize>Nombre Completo</th>
+    <td mat-cell *matNoDataRow="let element">
+      {{ element | nombreyapellido }}
+    </td>
+  </ng-container>
+-->
+
   <ng-container matColumnDef="DNI">
     <th mat-header-cell *matHeaderCellDef appFontSize>DNI</th>
     <td mat-cell *matCellDef="let element">{{ element.dni }}</td>
