@@ -3,6 +3,8 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModificarAlumnoComponent } from '../dialogos/misdialogos/modificar-alumno/modificar-alumno.component';
 //import { AgregarAlumnoComponent } from '../dialogos/mis-dialogos/agregar-alumno/agregar-alumno.component';
+import { AlumnosService } from 'src/app/services/alumnos.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export interface Alumno {
   nombre: string;
@@ -34,6 +36,7 @@ export class ListadoAlumnosComponent implements OnInit {
     'Email',
     'Pais',
     'Opciones',
+    'Detalle',
   ];
 
   dataSource: any[] = [];
@@ -42,7 +45,9 @@ export class ListadoAlumnosComponent implements OnInit {
 
   constructor(
     private localService: LocalStorageService,
-    private dialogoService: MatDialog
+    private dialogoService: MatDialog,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
     if (!localStorage.getItem('alumnos'))
       localStorage.setItem('alumnos', JSON.stringify(this.array));
@@ -66,5 +71,11 @@ export class ListadoAlumnosComponent implements OnInit {
   ngOnInit() {
     console.log(this.localService.obtenerAlumnos());
     this.dataSource = this.localService.obtenerAlumnos();
+  }
+
+  verDetalleDeAlumno(alumnoDni: number): void {
+    // this.router.navigate(['dashboard', 'tablas', estudianteId]);
+
+    this.router.navigate([`/alumnos/${alumnoDni}`]);
   }
 }

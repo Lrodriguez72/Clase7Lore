@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { AgregarAlumnoComponent } from './mis-dialogos/agregar-alumno/agregar-alumno.component';
 import { ListarAlumnosComponent } from './misdialogos/listar-alumnos/listar-alumnos.component';
 import { ModificarAlumnoComponent } from './misdialogos/modificar-alumno/modificar-alumno.component';
@@ -10,7 +11,7 @@ import { ModificarAlumnoComponent } from './misdialogos/modificar-alumno/modific
   styleUrls: ['./dialogos.component.scss'],
 })
 export class DialogosComponent {
-  constructor(private dialogoService: MatDialog) {}
+  constructor(private dialogoService: MatDialog, private router: Router) {}
   abrirDialogo(type: string): void {
     if (type === 'agregar') {
       this.dialogoService.open(AgregarAlumnoComponent);
@@ -19,7 +20,7 @@ export class DialogosComponent {
       this.dialogoService.open(ModificarAlumnoComponent);
     }
     if (type === 'listado') {
-      this.dialogoService.open(ListarAlumnosComponent);
+      this.router.navigate(['alumnos']);
     }
   }
 }

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ListadoAlumnosModule } from './pages/listado-alumnos/listado-alumnos.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,9 @@ import { ListadoAlumnosModule } from './pages/listado-alumnos/listado-alumnos.mo
     BrowserModule,
     BrowserAnimationsModule,
     DashboardModule,
+    AppRoutingModule,
+    RouterModule,
+    RouterModule.forRoot([]),
     //ListadoAlumnosModule,
   ],
   providers: [],
