@@ -15,7 +15,17 @@ export class AlumnosService {
     return this.alumno$;
   }
 
-  obtenerAlumnoPordni(dni: number): Observable<Alumno | undefined> {
+  //   obtenerAlumnosArgentinos(): Observable<Alumno[]> {
+
+  //
+  // .filter
+  // .map
+  //
+
+  //     return this.alumno$;
+  //   }
+
+  obtenerAlumnoPordni(dni: number): Observable<Alumno | null> {
     return this.alumno$.pipe(
       map((alumnos) => alumnos.find((s: any) => s.dni === dni))
     );

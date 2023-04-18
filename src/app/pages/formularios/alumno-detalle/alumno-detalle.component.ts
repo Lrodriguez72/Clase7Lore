@@ -10,21 +10,33 @@ import { Alumno } from '../../listado-alumnos/listado-alumnos.component';
   styleUrls: ['./alumno-detalle.component.scss'],
 })
 export class AlumnoDetalleComponent {
-  alumno$?: Alumno;
+  //OBSERVABLE
+  alumno$: Observable<Alumno | null>;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private alumnosService: AlumnosService
   ) {
-    const alumnoDni = Number(this.activatedRoute.snapshot.params['dni']);
+    const alumnoId = Number(this.activatedRoute.snapshot.params['dni']);
 
-    console.log(alumnoDni);
-    this.alumnosService.obtenerAlumnoPordni(alumnoDni).subscribe({
-      next: (res) => {
-        this.alumno$ = res;
-        console.log(res);
-      },
-      error: (err) => console.log(err),
-    });
+    this.alumno$ = this.alumnosService.obtenerAlumnoPordni(alumnoId);
   }
+
+  // alumno$?: Alumno;
+
+  // constructor(
+  //   private activatedRoute: ActivatedRoute,
+  //   private alumnosService: AlumnosService
+  // ) {
+  //   const alumnoDni = Number(this.activatedRoute.snapshot.params['dni']);
+
+  //   console.log(alumnoDni);
+  //   this.alumnosService.obtenerAlumnoPordni(alumnoDni).subscribe({
+  //     next: (res) => {
+  //       this.alumno$ = res;
+  //       console.log(res);
+  //     },
+  //     error: (err) => console.log(err),
+  //   });
+  // }
 }
