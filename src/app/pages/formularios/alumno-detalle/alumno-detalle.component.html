@@ -1,7 +1,8 @@
 <!--PIPE ASYNC   -->
-<ng-container *ngIf="alumno$ | async as alum">
-  <h1>{{ alum?.nombre }}</h1>
-  <p>{{ alum?.apellido }}</p>
-  <!--<p>{{ (alumno$ | async)?.email }}</p>
-  <p>{{ (alumno$ | async)?.pais }}</p> -->
+
+<ng-container *ngIf="alumno$ | async">
+  <h1>{{ (alumno$ | async)?.nombre }}</h1>
+  <p>{{ (alumno$ | async)?.apellido }}</p>
+  <p>{{ (alumno$ | async)?.email }}</p>
+  <p>{{ (alumno$ | async)?.pais }}</p>
 </ng-container>
