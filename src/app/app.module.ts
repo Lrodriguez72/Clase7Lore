@@ -18,8 +18,9 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     DashboardModule,
     AppRoutingModule,
-    RouterModule,
-    RouterModule.forRoot([]),
+    // AL TENER IMPORTADO AppRoutingModule, no hace falta las siguientes 2 lineas:
+    // RouterModule,
+    // RouterModule.forRoot([]),
     //ListadoAlumnosModule,
   ],
   providers: [],

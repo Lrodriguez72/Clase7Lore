@@ -15,6 +15,7 @@ import { ListadoAlumnosModule } from '../pages/listado-alumnos/listado-alumnos.m
 import { AgregarAlumnoModule } from '../pages/dialogos/mis-dialogos/agregar-alumno/agregar-alumno.module';
 import { ModificarAlumnoModule } from '../pages/dialogos/misdialogos/modificar-alumno/modificar-alumno.module';
 import { ListarAlumnosModule } from '../pages/dialogos/misdialogos/listar-alumnos/listar-alumnos.module';
+import { AlumnoDetalleModule } from '../pages/formularios/alumno-detalle/alumno-detalle.module';
 @NgModule({
   declarations: [DashboardComponent],
   exports: [DashboardComponent],
@@ -23,6 +24,7 @@ import { ListarAlumnosModule } from '../pages/dialogos/misdialogos/listar-alumno
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
+    AlumnoDetalleModule,
     MatButtonModule,
     MatCardModule,
     CardsModule,
